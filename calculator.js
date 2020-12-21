@@ -4,7 +4,7 @@ let previousOperator = null;
 
 const screen = document.querySelector('.screen');
 
-function buttonClick(value) {
+const buttonClick = (value) => {
   if (isNaN(value)) {
     //this is not a number
     handleSymbol(value);
@@ -15,7 +15,7 @@ function buttonClick(value) {
   screen.innerText = buffer;
 }
 
-function handleSymbol(symbol) {
+const handleSymbol = (symbol) => {
   switch (symbol) {
     case 'C':
     buffer = '0';
@@ -47,7 +47,7 @@ function handleSymbol(symbol) {
   }
 }
 
-function handleMath(symbol) {
+const handleMath = (symbol) => {
   if (buffer === "0") {
     //do nothing
     return;
@@ -65,7 +65,7 @@ function handleMath(symbol) {
   buffer = "0";
 }
 
-function flushOperation(intBuffer) {
+const flushOperation = (intBuffer) => {
   //you can use switch
   /*switch (previousOperator) {
     case '+':
@@ -85,7 +85,7 @@ function flushOperation(intBuffer) {
 
 }
 
-function handleNumber(numberString) {
+const handleNumber = (numberString) => {
   if (buffer === "0") {
     buffer = numberString;
   } else {
